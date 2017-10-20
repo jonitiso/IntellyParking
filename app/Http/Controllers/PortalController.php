@@ -60,7 +60,7 @@ class PortalController extends Controller
         }
 
         $vehiculo->save();
-        return redirect()->route('portal.index')->with('info', 'Agregado');
+        return redirect()->route('portal.index')->with('success', 'Vehiculo Agregado Correctamente');
 
     }
 
@@ -68,7 +68,7 @@ class PortalController extends Controller
     {
         $vehiculo = Vehiculo::Find($id);
         $vehiculo->delete();
-        return redirect()->route('portal.index')->with('info', 'Eliminado');
+        return redirect()->route('portal.index')->with('warning', 'Vehiculo Eliminado Correctamente');
     }
 
     public function show(Request $request, $id)

@@ -4,6 +4,8 @@
 		<title>SISTEMA DE PARQUEO</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="stylesheet" href="{{asset('css/estilos.css')}}">
@@ -22,13 +24,19 @@
 	
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav mr-auto">
-								<li class="nav-item active">
-									<a class="nav-link" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
+								<li class="nav-item <?php if (url('/')==url()->current()): ?>
+									active
+								<?php endif ?> ">
+									<a class="nav-link" href="{{ url('/') }}">Inicio</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item <?php if (route('portal.index')==url()->current()): ?>
+									active
+								<?php endif ?> ">
 									<a class="nav-link" href="{{ route('portal.index') }}">Portal</a>
 								</li>
-								<li class="nav-item">
+								<li class="nav-item <?php if (route('configuracion.index')==url()->current()): ?>
+									active
+								<?php endif ?> ">
 									<a class="nav-link" href="{{ route('configuracion.index') }}">Configuracion</a>
 								</li>
 							</ul>

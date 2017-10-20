@@ -24,6 +24,8 @@
                 <div class="card-header text-white bg-primary"><span style="font-weight: 500">Uso de los parqueaderos:</span></div>
 
                 <div class="card-body">
+
+                @include('info')
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
