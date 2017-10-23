@@ -48,7 +48,7 @@ $horafin = substr($now,-8);
 			</form>
 		</div>
 		<div class="col-6">
-			<embed src="{{ url('/portal',$vehiculo->id) }}" type="application/pdf" width="600px" height="800px"></embed>
+			<embed src="{{ route('salidapdf',$vehiculo->id) }}" type="application/pdf" width="600px" height="800px"></embed>
 		</div>
 	</div>
 </div>

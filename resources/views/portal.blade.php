@@ -35,41 +35,34 @@
                     <center>
                         <div class="alert alert-info">
                             <h2>{{ $now }}  <span id="liveclock"></span></h2>
-                        </div>
-                    </center>
-
+                            <br>
+    
                     @if($ccccarros==0 AND $cccmotos==0)
-                    <center>
-                        <div class="alert alert-danger">
+
                             <strong>Atencion: </strong>El parqueadero esta lleno.
                         </div>
                     </center>
 
 
                     @elseif($ccccarros==1)
-                    <center>
-                        <div class="alert alert-warning">
+
                             <strong>Atencion: </strong>Queda solo <strong>{{ $ccccarros }}</strong> espacio disponible para automoviles
                         </div>
                     </center>
                     @elseif($ccccarros<=4)
-                    <center>
-                        <div class="alert alert-warning">
+
                             <strong>Atencion: </strong>Quedan solo <strong>{{ $ccccarros }}</strong> espacios disponibles para automoviles
                         </div>
                     </center>
 
                     @elseif($ccccarros==$cantidadcarros AND $cccmotos==$cantidadmotos)
-                    <center>
-                        <div class="alert alert-info">
+
                             <strong>Informacion: </strong>El parqueadero esta vacio.
                         </div>
                     </center>
 
                     @else
 
-                    <center>
-                        <div class="alert alert-info">
                             <strong>Informacion: </strong>Quedan <strong>{{ $ccccarros }}</strong> espacios disponibles para automoviles
                         </div>
                     </center>
@@ -130,12 +123,12 @@
                 <div class="card-header text-white bg-secondary"><span style="font-weight: 500">Vehiculos Estacionados</span></div>
 
                 <div class="card-body">
-                    
+                    <a href="{{ route('deleteall') }}" class="btn btn-outline-danger"><span class="material-icons">delete_forever</span></a><br><br>
                     <ul class="list-group">
                     @foreach($vehiculos as $vehiculos)
                         <li class="list-group-item"><span>{{ $vehiculos->placa }} </span>
                         
-                        <a class="btn btn-outline-warning" href="{{ route('vista', $vehiculos->id) }}" class="btn">Impresion</a>
+                        <a class="btn btn-outline-primary" href="{{ route('salida', $vehiculos->id) }}" class="btn"><span class="material-icons">print</span></a>
 
                     @endforeach
                     </ul>

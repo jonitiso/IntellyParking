@@ -24,7 +24,7 @@ class VehiculoRequest extends FormRequest
     public function rules()
     {
         return [
-            'placa' => 'required'
+            'placa' => 'required|max:6|unique'
             'tipo' => 'required'
 
         ];

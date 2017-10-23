@@ -17,7 +17,17 @@ Auth::routes();
 
 Route::resource('/portal', 'PortalController');
 
-Route::get('/portal/{id}/vista', 'PortalController@vista')->name('vista');
+Route::get('/portal/{id}/salida', 'PortalController@salida')->name('salida');
+
+Route::get('/portal_entrada', 'PortalController@entrada')->name('entrada');
+
+
+Route::get('/deleteall', 'PortalController@deleteall')->name('deleteall');
+
+
+Route::get('/portal_entradapdf/{placa}', 'PortalController@entradapdf')->name('entradapdf');
+
+Route::get('/portal_salidapdf/{placa}', 'PortalController@salidapdf')->name('salidapdf');
 
 
 Route::resource('/configuracion', 'ConfigController');
