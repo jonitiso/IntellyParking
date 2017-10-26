@@ -53,12 +53,13 @@ $horafin = substr($now,-8);
 	NIT: 19.344.630-4 <br>
 	<span>REGIMEN SIMPLIFICADO</span> <br>
 	<span>Calle 31 # 23-12</span> <br>
-	<span>BUCARAMANGA</span>
+	<span>BUCARAMANGA</span> <br>
+	<span>Tel: 6537950</span>
 	<br><br>
 
+	<span><strong>RECIBO DE SALIDA </strong> </span>
 
-
-	<br>
+	<br><br>
 
 	<table>
 		<tr>
@@ -76,44 +77,44 @@ $horafin = substr($now,-8);
 		</tr>
 	</table>
 
-	<table>
+	<table style="padding-left: 45px;">
 		<tr>
-			<td>
-				<strong>FECHA ENTRADA:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>FECHA ENTRADA: </strong>
 			</td>
-			<td>{{ $vehiculo->created_at }} </td>
+			<td> {{ $vehiculo->created_at }} </td>
 		</tr>
 		<tr>
-			<td>
-				<strong>FECHA SALIDA:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>FECHA SALIDA: </strong>
 			</td>
-			<td>{{ $now }} </td>
+			<td> {{ $now }} </td>
 		</tr>
 		<tr>
-			<td>
-				<strong>DURACION:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>DURACION: </strong>
 			</td>
-			<td>{{ $x }} </td>
+			<td> {{ $x }} </td>
 		</tr>
 		<tr>
-			<td>
-				<strong>HORAS COBRADAS:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>HORAS COBRADAS: </strong>
 			</td>
-			<td>{{ $horascobradas }} </td>
+			<td> {{ $horascobradas }} </td>
 		</tr>
 		<tr>
-			<td>
-				<strong>VALOR POR HORA:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>VALOR POR HORA: </strong>
 			</td>
 			<td>
 
 			<?php if ($vehiculo->tipo=='Automovil') {
 				$precio = $preciocarros;
-				echo "$ " . number_format($precio);
+				echo " $ " . number_format($precio);
 			} 
 			elseif ($vehiculo->tipo=='Moto') {
 				$precio = $preciomotos;
-				echo "$ " . number_format($precio);
+				echo " $ " . number_format($precio);
 			}
 
 
@@ -123,10 +124,10 @@ $horafin = substr($now,-8);
 			</td>
 		</tr>
 		<tr>
-			<td>
-				<strong>VALOR TOTAL:</strong>
+			<td style="text-align: right; padding-right: 15px;">
+				<strong>VALOR TOTAL: </strong>
 			</td>
-			<td>$ {!! $dada = number_format($horascobradas * $precio) !!} </td>
+			<td> $ {!! $dada = number_format($horascobradas * $precio) !!} </td>
 		</tr>
 	</table>
 

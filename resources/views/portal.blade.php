@@ -21,7 +21,7 @@
     <div class="col-1"></div>
         <div class="col-md-7">
             <div class="card card-default border border-primary">
-                <div class="card-header text-white bg-primary"><span style="font-weight: 500">Uso de los parqueaderos:</span></div>
+                <div class="card-header text-white bg-primary"><span style="font-weight: 500"><span class="material-icons btn-icon">info_outline</span> Uso de los parqueaderos:</span></div>
 
                 <div class="card-body">
 
@@ -98,7 +98,7 @@
 
 
             <div class="card card-default border border-success">
-                <div class="card-header text-white bg-success"><span style="font-weight: 500">Nuevo Vehiculo:</span></div>
+                <div class="card-header text-white bg-success"><span style="font-weight: 500"><span class="material-icons btn-icon">add</span> Nuevo Vehiculo</span></div>
 
                 <div class="card-body">
 
@@ -123,15 +123,26 @@
                 <div class="card-header text-white bg-secondary"><span style="font-weight: 500">Vehiculos Estacionados</span></div>
 
                 <div class="card-body">
-                    <a href="{{ route('deleteall') }}" class="btn btn-outline-danger"><span class="material-icons">delete_forever</span></a><br><br>
-                    <ul class="list-group">
-                    @foreach($vehiculos as $vehiculos)
-                        <li class="list-group-item"><span>{{ $vehiculos->placa }} </span>
-                        
-                        <a class="btn btn-outline-primary" href="{{ route('salida', $vehiculos->id) }}" class="btn"><span class="material-icons">print</span></a>
-
-                    @endforeach
-                    </ul>
+                    <a href="{{ route('deleteall') }}" class="btn btn-outline-danger"><span class="material-icons">delete_forever</span></a><br>
+                    
+                    <table class="table datatable table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>PLACA</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($vehiculos as $vehiculos)
+                            <tr>
+                                <td style="padding: 4px 20px; font-size:1.3rem;">
+                                    {{ $vehiculos->placa }}
+                                </td>
+                                <td style="padding: 4px 20px;"><a class="btn btn-outline-primary" href="{{ route('salida', $vehiculos->id) }}"><span class="material-icons">print</span></a></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
