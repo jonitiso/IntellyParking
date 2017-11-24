@@ -72,13 +72,14 @@
 
 
                     <br>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: {{ $totalcarros }}%; height: 20px;" aria-valuenow="{{ $totalcarros }}" aria-valuemin="0" aria-valuemax="100">{{ $totalcarros }}%</div>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar" role="progressbar" style="width: {{ $totalcarros }}%; " aria-valuenow="{{ $totalcarros }}" aria-valuemin="0" aria-valuemax="100">{{ $totalcarros }}%</div>
 
                     </div>
                     <br>
-                    <div class="progress">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $totalmotos }}%; height: 20px;" aria-valuenow="{{ $totalmotos }}" aria-valuemin="0" aria-valuemax="100">{{ $totalmotos }}%</div>
+                    <div class="progress" style="height: 20px;">
+
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ $totalmotos }}%; " aria-valuenow="{{ $totalmotos }}" aria-valuemin="0" aria-valuemax="100">{{ $totalmotos }}%</div>
                     <b></b>
                     </div>
                     <br>

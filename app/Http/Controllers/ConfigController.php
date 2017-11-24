@@ -16,6 +16,9 @@ class ConfigController extends Controller
 	public function __construct()
     {
         $this->middleware('auth');
+        $nombresistema = Config::select('valor')->where('item', 'nombresistema')->pluck('valor');
+        $nombresistema = $nombresistema[0];
+        define('NOMBRESISTEMA', $nombresistema);
     }
 
 
@@ -31,7 +34,7 @@ class ConfigController extends Controller
     	$vehiculo->valor = $request->valor;
 
     	$vehiculo->save();
-    	return redirect()->route('configuracion.index')->with('info', 'Configuracion Actualizada');
+    	return redirect()->route('configuracion.index')->with('success', 'Configuracion Actualizada');
 
     }
 }

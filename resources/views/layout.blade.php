@@ -21,12 +21,13 @@
 				margin: -14px 4px -10px -9px; vertical-align: middle;
 			}
 		</style>
+		
 		<div id="app">
 
 			<header>
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 					<div class="container">
-						<a class="navbar-brand" href="{{ url('/') }}">IntelliParking</a>
+						<a class="navbar-brand" href="{{ url('/') }}"></a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="	navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>

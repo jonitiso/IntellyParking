@@ -19,6 +19,10 @@ class PortalController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $nombresistema = Config::select('valor')->where('item', 'nombresistema')->pluck('valor');
+        $nombresistema = $nombresistema[0];
+        define('NOMBRESISTEMA', $nombresistema);
+        
     }
 
 
@@ -39,7 +43,7 @@ class PortalController extends Controller
 
         $vehiculos = Vehiculo::get();
 
-        return view('portal', compact('vehiculos', 'conteocarros', 'conteomotos', 'aaa', 'now', 'aaamotos'));
+        return view('portal', compact('vehiculos', 'conteocarros', 'conteomotos', 'aaa', 'now', 'aaamotos', 'nombresistema'));
     }
 
     public function store(Request $request)
